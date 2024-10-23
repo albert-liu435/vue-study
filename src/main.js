@@ -6,9 +6,28 @@
 
 // createApp(App).mount("#app");
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// import "./assets/main.css";
+
+// import { createApp } from "vue";
+// import App from "./components/sytle/App.vue";
+
+// createApp(App).mount("#app");
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// import "./assets/main.css";
+
+// import { createApp } from "vue";
+// import App from "./components/props/App.vue";
+
+// createApp(App).mount("#app");
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 import "./assets/main.css";
 
 import { createApp } from "vue";
-import App from "./components/sytle/App.vue";
+import App from "./components/props/App.vue";
 
 createApp(App).mount("#app");
