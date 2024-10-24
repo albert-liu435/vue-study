@@ -1,10 +1,60 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import TheWelcome from './components/TheWelcome.vue'
+
+import axios from 'axios'
+import { ref } from 'vue';
+
+// let info=ref('');
+// // const props = ref(['info']);
+// // var info={};
+
+
+// const send=()=>{
+//   // let that=this;
+
+//   axios.get('http://127.0.0.1:8080/axios/info')
+//     .then(response=>{
+//       console.log(response.data)
+//       info.value=response.data;
+//       console.log(info)
+//     })
+//     .catch(function(error){
+//       console.log(error)
+//     })}
+
+/////////////////////////////////////////////////////////////
+
+// let info=ref('');
+// const props = ref(['info']);
+// var info={};
+const info=ref({name:'zhangsan'});
+
+
+const send=()=>{
+  // let that=this;
+
+  axios.get('http://127.0.0.1:8080/axios/info')
+    .then(response=>{
+      console.log(response.data)
+      info.value.name=response.data;
+      console.log(info)
+    })
+    .catch(function(error){
+      console.log(error)
+    })}
+
 </script>
 
 <template>
-  <header>
+
+<div>
+  <button v-on:click="send">发送get</button>
+  <br/>
+  {{ info.name }}
+</div>
+
+  <!-- <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -14,7 +64,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
   <main>
     <TheWelcome />
-  </main>
+  </main> -->
 </template>
 
 <style scoped>
