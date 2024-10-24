@@ -5,6 +5,8 @@
 import axios from 'axios'
 import { ref } from 'vue';
 
+import request from './utils/request';
+
 // let info=ref('');
 // // const props = ref(['info']);
 // // var info={};
@@ -25,24 +27,34 @@ import { ref } from 'vue';
 
 /////////////////////////////////////////////////////////////
 
-// let info=ref('');
-// const props = ref(['info']);
-// var info={};
-const info=ref({name:'zhangsan'});
+// // let info=ref('');
+// // const props = ref(['info']);
+// // var info={};
+// const info=ref({name:'zhangsan'});
 
 
-const send=()=>{
-  // let that=this;
+// const send=()=>{
+//   // let that=this;
 
-  axios.get('http://127.0.0.1:8080/axios/info')
-    .then(response=>{
-      console.log(response.data)
-      info.value.name=response.data;
-      console.log(info)
-    })
-    .catch(function(error){
-      console.log(error)
-    })}
+//   axios.get('http://127.0.0.1:8080/axios/info')
+//     .then(response=>{
+//       console.log(response.data)
+//       info.value.name=response.data;
+//       console.log(info)
+//     })
+//     .catch(function(error){
+//       console.log(error)
+//     })}
+
+
+// 测试aixos
+const send = async ()=>{
+  const res= await request({
+    url:"https://tea.qingnian8.com/tools/petShow",
+    method:"GET"
+  })
+  console.log(res)
+}
 
 </script>
 
@@ -54,17 +66,6 @@ const send=()=>{
   {{ info.name }}
 </div>
 
-  <!-- <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main> -->
 </template>
 
 <style scoped>
