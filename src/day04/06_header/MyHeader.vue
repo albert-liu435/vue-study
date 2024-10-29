@@ -1,0 +1,36 @@
+<template>
+  <div class="header-container"
+       :style="{ backgroundColor: props.bgcolor, color: props.color }">
+    {{props.title || 'Header 组件'}}
+  </div>
+</template>
+
+<script setup>
+import { defineProps } from 'vue';
+
+const props=defineProps({
+	title:String,
+	bgcolor:String,
+	color:String
+})
+
+
+
+</script>
+
+<style scoped>
+.header-container{
+	height: 45px;
+	background-color: pink;
+	text-align: center;
+	line-height: 45px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+
+}
+
+
+</style>
